@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCPGecko\MemArea.cs" />
+    <Compile Include="TCPGecko\tcpconn.cs" />
+    <Compile Include="TCPGecko\TCPGecko.cs" />
     <Compile Include="Update System\Updater.cs" />
     <Compile Include="Utilities\MessageBoxes.cs" />
     <EmbeddedResource Include="Forms\MainForm.resx">
