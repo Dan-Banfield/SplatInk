@@ -1,4 +1,6 @@
 ﻿using System.Windows.Forms;
+using SplatInk.UpdateSystem;
+using System.Threading.Tasks;
 
 namespace SplatInk.Forms
 {
@@ -8,5 +10,8 @@ namespace SplatInk.Forms
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+            => Task.Run(() => Updater.CheckForUpdates());
     }
 }
