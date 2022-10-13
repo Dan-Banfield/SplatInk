@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tcpGeckoConnectionGroupBox = new System.Windows.Forms.GroupBox();
             this.connectionStatusLabel = new System.Windows.Forms.Label();
             this.wiiUIPAddressTextBox = new System.Windows.Forms.TextBox();
@@ -128,6 +129,7 @@
             this.Controls.Add(this.changeInkColourButton);
             this.Controls.Add(this.tcpGeckoConnectionGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
