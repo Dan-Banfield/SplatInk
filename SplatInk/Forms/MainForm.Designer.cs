@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.tcpGeckoConnectionGroupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.connectButton = new System.Windows.Forms.Button();
-            this.disconnectButton = new System.Windows.Forms.Button();
-            this.wiiUIPAddressTextBox = new System.Windows.Forms.TextBox();
             this.connectionStatusLabel = new System.Windows.Forms.Label();
+            this.wiiUIPAddressTextBox = new System.Windows.Forms.TextBox();
+            this.disconnectButton = new System.Windows.Forms.Button();
+            this.connectButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.changeInkColourButton = new System.Windows.Forms.Button();
             this.tcpGeckoConnectionGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -53,25 +53,24 @@
             this.tcpGeckoConnectionGroupBox.TabStop = false;
             this.tcpGeckoConnectionGroupBox.Text = "TCPGecko Connection";
             // 
-            // label1
+            // connectionStatusLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Wii U IP Address:";
+            this.connectionStatusLabel.ForeColor = System.Drawing.Color.Red;
+            this.connectionStatusLabel.Location = new System.Drawing.Point(145, 60);
+            this.connectionStatusLabel.Name = "connectionStatusLabel";
+            this.connectionStatusLabel.Size = new System.Drawing.Size(231, 16);
+            this.connectionStatusLabel.TabIndex = 4;
+            this.connectionStatusLabel.Text = "Connection Status: Not Connected";
+            this.connectionStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // connectButton
+            // wiiUIPAddressTextBox
             // 
-            this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.connectButton.Location = new System.Drawing.Point(314, 27);
-            this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(87, 24);
-            this.connectButton.TabIndex = 1;
-            this.connectButton.TabStop = false;
-            this.connectButton.Text = "Connect";
-            this.connectButton.UseVisualStyleBackColor = true;
+            this.wiiUIPAddressTextBox.BackColor = System.Drawing.Color.Red;
+            this.wiiUIPAddressTextBox.Location = new System.Drawing.Point(132, 30);
+            this.wiiUIPAddressTextBox.Name = "wiiUIPAddressTextBox";
+            this.wiiUIPAddressTextBox.Size = new System.Drawing.Size(167, 20);
+            this.wiiUIPAddressTextBox.TabIndex = 3;
+            this.wiiUIPAddressTextBox.TabStop = false;
             // 
             // disconnectButton
             // 
@@ -84,25 +83,28 @@
             this.disconnectButton.TabStop = false;
             this.disconnectButton.Text = "Disconnect";
             this.disconnectButton.UseVisualStyleBackColor = true;
+            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
             // 
-            // wiiUIPAddressTextBox
+            // connectButton
             // 
-            this.wiiUIPAddressTextBox.BackColor = System.Drawing.Color.Red;
-            this.wiiUIPAddressTextBox.Location = new System.Drawing.Point(132, 30);
-            this.wiiUIPAddressTextBox.Name = "wiiUIPAddressTextBox";
-            this.wiiUIPAddressTextBox.Size = new System.Drawing.Size(167, 20);
-            this.wiiUIPAddressTextBox.TabIndex = 3;
-            this.wiiUIPAddressTextBox.TabStop = false;
+            this.connectButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.connectButton.Location = new System.Drawing.Point(314, 27);
+            this.connectButton.Name = "connectButton";
+            this.connectButton.Size = new System.Drawing.Size(87, 24);
+            this.connectButton.TabIndex = 1;
+            this.connectButton.TabStop = false;
+            this.connectButton.Text = "Connect";
+            this.connectButton.UseVisualStyleBackColor = true;
+            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
-            // connectionStatusLabel
+            // label1
             // 
-            this.connectionStatusLabel.ForeColor = System.Drawing.Color.Red;
-            this.connectionStatusLabel.Location = new System.Drawing.Point(145, 60);
-            this.connectionStatusLabel.Name = "connectionStatusLabel";
-            this.connectionStatusLabel.Size = new System.Drawing.Size(231, 16);
-            this.connectionStatusLabel.TabIndex = 4;
-            this.connectionStatusLabel.Text = "Connection Status: Not Connected";
-            this.connectionStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wii U IP Address:";
             // 
             // changeInkColourButton
             // 
