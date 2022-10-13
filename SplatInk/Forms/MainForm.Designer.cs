@@ -35,6 +35,7 @@
             this.connectButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.changeInkColourButton = new System.Windows.Forms.Button();
+            this.colourDialog = new System.Windows.Forms.ColorDialog();
             this.tcpGeckoConnectionGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,6 +109,7 @@
             // 
             // changeInkColourButton
             // 
+            this.changeInkColourButton.Enabled = false;
             this.changeInkColourButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.changeInkColourButton.Location = new System.Drawing.Point(12, 116);
             this.changeInkColourButton.Name = "changeInkColourButton";
@@ -116,6 +118,7 @@
             this.changeInkColourButton.TabStop = false;
             this.changeInkColourButton.Text = "Change Ink Colour!";
             this.changeInkColourButton.UseVisualStyleBackColor = true;
+            this.changeInkColourButton.Click += new System.EventHandler(this.changeInkColourButton_Click);
             // 
             // MainForm
             // 
@@ -145,6 +148,7 @@
         private System.Windows.Forms.TextBox wiiUIPAddressTextBox;
         private System.Windows.Forms.Label connectionStatusLabel;
         private System.Windows.Forms.Button changeInkColourButton;
+        private System.Windows.Forms.ColorDialog colourDialog;
     }
 }
 

@@ -1,8 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using GeckoDotNet;
+using SplatInk.Utilities;
+using System.Windows.Forms;
 using SplatInk.UpdateSystem;
 using System.Threading.Tasks;
-using SplatInk.Utilities;
-using GeckoDotNet;
 
 namespace SplatInk.Forms
 {
@@ -15,6 +15,8 @@ namespace SplatInk.Forms
         #endregion
 
         private uint colourStart = 0x12D28180;
+
+        float coloraR, coloraG, coloraB, coloraA;
 
         public MainForm()
         {
@@ -31,6 +33,9 @@ namespace SplatInk.Forms
 
         private void disconnectButton_Click(object sender, System.EventArgs e)
             => Disconnect();
+
+        private void changeInkColourButton_Click(object sender, System.EventArgs e)
+            => SetAlphaColour();
 
         #endregion
 
@@ -72,6 +77,7 @@ namespace SplatInk.Forms
 
             connectButton.Enabled = false;
             disconnectButton.Enabled = true;
+            changeInkColourButton.Enabled = true;
         }
 
         private void Disconnect()
@@ -80,6 +86,37 @@ namespace SplatInk.Forms
 
             connectButton.Enabled = true;
             disconnectButton.Enabled = false;
+            changeInkColourButton.Enabled = false;
+        }
+
+        private void SetAlphaColour()
+        {
+            DialogResult result = colourDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                coloraR = colourDialog.Color.R;
+                coloraG = colourDialog.Color.G;
+                coloraB = colourDialog.Color.B;
+                coloraA = colourDialog.Color.A;
+
+                try
+                {
+                    tcpGecko.poke(colourStart, 
+                        MessageBoxes.FloatToHex(coloraR / 256.0F));
+                    tcpGecko.poke(colourStart + 0x4, 
+                        MessageBoxes.FloatToHex(coloraG / 256.0F));
+                    tcpGecko.poke(colourStart + 0x8, 
+                        MessageBoxes.FloatToHex(coloraB / 256.0F));
+                }
+                catch
+                {
+                    MessageBoxes.
+                        ShowErrorMessage("Error!", "Failed to write colours to the game's memory!");
+                }
+
+                // AlphaShowBox.BackColor = colourDialog.Color;
+            }
         }
 
         #endregion
